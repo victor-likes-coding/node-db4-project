@@ -6,7 +6,9 @@
     "start": "node index.js",
     "seed": "knex seed:run",
     "migrate": "knex migrate:latest",
-    "migrate:rollback": "knex migrate:rollback"
+    "rollback": "knex migrate:rollback",
+    "up": "knex migrate:up",
+    "down": "knex migrate:down"
   },
   "repository": {
     "type": "git",
