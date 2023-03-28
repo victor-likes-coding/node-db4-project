@@ -1,5 +1,5 @@
-const recipiesRouter = require('./recipies');
+const recipesRouter = require('./recipes');
 
 module.exports = {
-  recipiesRouter,
+  recipesRouter,
 };
