@@ -10,10 +10,10 @@ module.exports = {
       filename: './data/dev.sqlite3',
     },
     migrations: {
-      directory: './migrations',
+      directory: './data/migrations',
     },
-    seed: {
-      directory: './seeds',
+    seeds: {
+      directory: './data/seeds',
     },
     afterCreate: (conn, cb) => {
       conn.run('PRAGMA foreign_keys = ON', cb);
