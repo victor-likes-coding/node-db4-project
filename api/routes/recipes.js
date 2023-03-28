@@ -1,9 +1,15 @@
 const express = require('express');
+const { get } = require('../model/recipes');
 
 const router = express.Router();
 
 router.get('/', async (req, res, next) => {
-  res.json('hello world');
+  try {
+    const result = await get();
+    res.status(200).json(result);
+  } catch (err) {
+    next(err);
+  }
 });
 
 router.use((err, req, res, next) => {
