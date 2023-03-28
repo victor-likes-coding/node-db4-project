@@ -11,6 +11,7 @@ exports.up = async (knex) => {
     .createTable('ingredients', (table) => {
       table.increments('id');
       table.string('name', 128).notNullable().unique();
+      table.float('quantity').notNullable();
     })
     .createTable('steps', (table) => {
       table.increments('id');
@@ -22,7 +23,6 @@ exports.up = async (knex) => {
       table.increments('id');
       table.integer('ingredient_id').unsigned().notNullable().references('id').inTable('ingredients').onDelete('RESTRICT').onUpdate('RESTRICT');
       table.integer('step_id').unsigned().notNullable().references('id').inTable('steps').onDelete('RESTRICT').onUpdate('RESTRICT');
-      table.float('quantity').notNullable();
     });
 };
 
